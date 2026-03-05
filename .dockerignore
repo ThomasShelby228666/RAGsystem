@@ -1,0 +1,35 @@
+# Git
+.git
+.gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+
+# IDE
+.idea/
+.vscode/
+
+# Logs и временные файлы
+*.log
+logs/
+rag_debug.log
+rag_main.log
+
+# База данных (будет создаваться в контейнере)
+chroma_db/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose.yml
