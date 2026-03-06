@@ -15,12 +15,20 @@ RAG/
 ├── README.md # Эта инструкция
 ├── documents/ # Папка с вашими PDF документами
 ├── chroma_db/ # Векторная база данных (создается автоматически)
+├── .gitignore / # Файлы, исключаемые из системы контроля версий
+├── Dockerfile / # Инструкция для Docker
+├── .dockerignore / # Файлы, которые не будут собираться в контейнер
 └── logs/ # Логи работы системы (создаются автоматически)
 ```
 
-## Установка
+## Установка без Docker
 
-1.  **Создайте виртуальное окружение:**
+1. **Клонируйте репозиторий:**
+    ```bash
+    git clone https://github.com/ThomasShelby228666/RAGsystem.git
+    cd RAG
+    ```
+2. **Создайте виртуальное окружение:**
     ```bash
     python -m venv .venv
     # Активируйте его:
@@ -29,13 +37,24 @@ RAG/
     # Linux/Mac:
     # source .venv/bin/activate
     ```
-
-2.  **Установите зависимости:**
+   
+3. **Установите зависимости:**
     ```bash
     pip install -r requirements.txt
     ```
     Основные зависимости: `transformers`, `torch`, `chromadb`, `sentence-transformers`, `PyPDF2`, `accelerate`, `python-telegram-bot`, `python-dotenv`.
 
+## Установка с помощью Docker
+1. **Соберите контейнер:**
+    ```bash
+    docker build -t python-rag .
+    ```
+
+2. **Запустите контейнер:**
+    ```bash
+    docker run -it --gpus all -v $(pwd)/documents:/app/documents python-rag
+    ```
+   
 ## Подготовка данных
 
 1.  **Поместите PDF-документы** с документацией Python в папку `documents/`.
