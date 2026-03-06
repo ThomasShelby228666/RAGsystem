@@ -3,7 +3,7 @@ import os
 import logging
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.constants import ChatAction
-from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackContext, Updater
+from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 import asyncio
 
 # Загрузка переменных окружения из файла .env

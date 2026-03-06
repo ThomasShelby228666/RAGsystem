@@ -13,11 +13,13 @@ RAG/
 ├── telegram_bot.py # Telegram-бот (опционально)
 ├── requirements.txt # Зависимости
 ├── README.md # Эта инструкция
+├── .gitignore # Файлы, исключаемые из системы контроля версий
+├── Dockerfile # Инструкция для Docker
+├── .dockerignore  # Файлы, которые не будут собираться в контейнер
 ├── documents/ # Папка с вашими PDF документами
+│
 ├── chroma_db/ # Векторная база данных (создается автоматически)
-├── .gitignore / # Файлы, исключаемые из системы контроля версий
-├── Dockerfile / # Инструкция для Docker
-├── .dockerignore / # Файлы, которые не будут собираться в контейнер
+│
 └── logs/ # Логи работы системы (создаются автоматически)
 ```
 
@@ -123,3 +125,17 @@ RAG/
     *   `symlinks`: На Windows вы можете видеть предупреждение о symlinks в кэше Hugging Face. Это не критично и связано с ограничениями файловой системы Windows ([подробнее](https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations)). Чтобы убрать предупреждение, можно активировать Developer Mode в Windows.
     *   `telemetry`: ChromaDB может сообщать анонимную телеметрию ([подробнее](https://docs.trychroma.com/telemetry)).
     *   `FutureWarning`: Предупреждения от библиотек `torch` и `transformers` о deprecated функциях. Не влияют на работу.
+
+## Лицензия
+
+MIT License
+
+## Автор
+
+[@ThomasShelby228666](https://github.com/ThomasShelby228666)
+
+## Благодарности
+
+- [ChromaDB](https://docs.trychroma.com/docs/overview/introduction)
+- [PyTorch](https://docs.pytorch.org/docs/stable/index.html)
+- [Sentence Transformers](https://www.sbert.net/)
